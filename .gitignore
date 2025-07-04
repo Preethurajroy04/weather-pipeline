@@ -1,0 +1,7 @@
+*.zip
+.venv
+__pycache__
+*.pyc
+API_README.md
+*.db
+.pytest_cache

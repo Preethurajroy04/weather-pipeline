@@ -5,7 +5,8 @@
 ### Local Development Setup:
 
 ```bash
-# 1. Install dependencies
+# 1. Setup and Install dependencies
+python -m venv .venv && source venv/bin/activate  # On Windows use `.venv\Scripts\activate`
 pip install -r requirements.txt
 
 # 2. Run ETL to populate database

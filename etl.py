@@ -166,33 +166,6 @@ class WeatherDataETL:
             logger.error(f"Error processing batch: {str(e)}")
             return 0
     
-    def process_dataframe(self, df: pl.DataFrame) -> int:
-        """Process a DataFrame in batches (fallback method for compatibility)
-        
-        Args:
-            df: Polars DataFrame with weather data
-            
-        Returns:
-            Number of records successfully inserted
-        """
-        if df is None or len(df) == 0:
-            return 0
-        
-        records_inserted = 0
-        
-        # Convert to list of tuples directly from Polars (no pandas conversion)
-        data_tuples = list(df.iter_rows())
-        
-        # Process in batches
-        for i in range(0, len(data_tuples), self.batch_size):
-            batch = data_tuples[i:i + self.batch_size]
-            batch_inserted = self.process_batch(batch)
-            records_inserted += batch_inserted
-            
-            if (i // self.batch_size + 1) % 10 == 0:  # Log every 10 batches
-                logger.info(f"Processed {i + len(batch)} records...")
-        
-        return records_inserted
     
     def get_data_files(self) -> List[str]:
         """Get list of all weather data files

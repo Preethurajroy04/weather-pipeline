@@ -229,10 +229,7 @@ if __name__ == "__main__":
         stats = db.get_yearly_stats()
         for stat in stats[:5]:  # Show first 5 records
             station_id, year, avg_max, avg_min, total_precip = stat
-            print(f"Station: {station_id}, Year: {year}")
-            print(f"  Avg Max Temp: {avg_max}°C" if avg_max is not None else "  Avg Max Temp: N/A")
-            print(f"  Avg Min Temp: {avg_min}°C" if avg_min is not None else "  Avg Min Temp: N/A") 
-            print(f"  Total Precipitation: {total_precip}cm" if total_precip is not None else "  Total Precipitation: N/A")
+            print(f"Station: {station_id}, Year: {year}, Avg Max Temp: {avg_max}, Avg Min Temp: {avg_min}, Total Precipitation: {total_precip}")
         
         db.close()
 

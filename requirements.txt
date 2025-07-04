@@ -4,3 +4,4 @@ pydantic==2.4.2
 polars==0.19.14
 pytest==7.4.3
 httpx==0.25.2
+pyarrow==18.0.0

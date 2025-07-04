@@ -1,7 +1,7 @@
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
+fastapi==0.115.14
+uvicorn[standard]==0.33.0
 pydantic==2.4.2
-polars==0.19.14
-pytest==7.4.3
+polars==1.8.2
+pytest==8.3.5
 httpx==0.25.2
-pyarrow==18.0.0
+pyarrow==17.0.0
